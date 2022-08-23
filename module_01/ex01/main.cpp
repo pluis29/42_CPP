@@ -5,29 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/21 14:36:15 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/22 22:55:23 by lpaulo-d         ###   ########.fr       */
+/*   Created: 2022/08/22 11:45:47 by lpaulo-d          #+#    #+#             */
+/*   Updated: 2022/08/22 23:11:28 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "PhoneBook.hpp"
+#include "Zombie.hpp"
 
 int	main( void )
 {
+	Zombie*	horde;
 
-	std::string	user_input;
-	PhoneBook	phonebook;
+	horde = zombieHorde( 15, "Spartan" );
+	for ( int i = 0; i < 15; i++ )
+		horde[i].announce();
 
-	do {
-		std::cout << "-> ";
-		std::getline( std::cin, user_input );
-		if ( user_input.compare( "ADD" ) == 0 )
-			phonebook.Add_New_Contact();
-		if ( user_input.compare( "SEARCH" ) == 0 )
-			phonebook.search_Contact();
-		if ( user_input.compare( "EXIT" ) == 0 )
-			break ;
-	} while ( true );
-	return ( 0 );
+	delete [] horde;
 }

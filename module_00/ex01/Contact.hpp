@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 16:51:30 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/21 22:29:53 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/22 23:05:24 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,24 @@
 class	Contact
 {
 	public:
-		Contact();
-		~Contact();
+		Contact( void );
+		~Contact( void );
 
 		int			index;
 
-		void		set_firstName();
-		void		set_lastName();
-		void		set_nickname();
-		void		set_phoneNumber();
-		void		set_darkSecret();
+		void		set_firstName( void );
+		void		set_lastName( void );
+		void		set_nickname( void );
+		void		set_phoneNumber( void );
+		void		set_darkSecret( void );
 
-		bool		isAlpha(std::string str);
-		bool		isNumber(std::string str);
+		bool		isAlpha( std::string str );
+		bool		isNumber( std::string str );
 
-		void		print_Header();
-		void		print_Contact();
-		std::string	squeeze_toFit(std::string str);
-		void		print_ContactID();
+		void		print_Header( void );
+		void		print_Contact( void );
+		std::string	squeeze_toFit( std::string str );
+		void		print_ContactID( void );
 
 	private:
 		std::string	_firstName;

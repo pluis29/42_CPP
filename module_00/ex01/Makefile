@@ -6,16 +6,19 @@
 #    By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/21 13:55:12 by lpaulo-d          #+#    #+#              #
-#    Updated: 2022/08/21 23:49:14 by lpaulo-d         ###   ########.fr        #
+#    Updated: 2022/08/22 22:12:47 by lpaulo-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-F_FILE	=	main.cpp Contact.cpp PhoneBook.cpp
-OBJ		=	$(F_FILE:.cpp=.o)
+OBJDIR	=	obj/
 
-RM		=	rm -rf
-CFLAGS	=	-Wall -Wextra -Werror -std=c++98
+F_FILE	=	main.cpp Contact.cpp PhoneBook.cpp
+OBJ		=	$(F_FILE:%.cpp=$(OBJDIR)%.o)
+
 CCP		=	g++
+RM		=	rm -rf
+P_GUARD	=	mkdir -p $(@D)
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 NAME	=	close_phone
 
 all:		$(NAME)
@@ -23,15 +26,22 @@ all:		$(NAME)
 $(NAME):	$(OBJ)
 	$(CCP) $(CFLAGS) $(OBJ) -o $(NAME)
 
-%.o:	%.cpp
+$(OBJDIR)%.o:	%.cpp
+	$(P_GUARD)
 	$(CCP) $(CFLAGS) -c $< -o $@
 
+run:
+	./$(NAME)
+
+val:
+	valgrind --leak-check=full --show-leak-kinds=all -s --track-origins=yes ./$(NAME)
+
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJDIR)
 
 fclean:	clean
 	$(RM) $(NAME)
 
 re:	fclean all
 
-.PHONY:	all clean fclean re
+.PHONY:	all clean fclean re run val

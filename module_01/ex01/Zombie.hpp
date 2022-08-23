@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/21 14:36:15 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/22 22:55:23 by lpaulo-d         ###   ########.fr       */
+/*   Created: 2022/08/22 11:57:31 by lpaulo-d          #+#    #+#             */
+/*   Updated: 2022/08/22 22:41:38 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef		ZOMBIE_HPP
+# define	ZOMBIE_HPP
+
 #include <iostream>
-#include "PhoneBook.hpp"
+#include <string>
 
-int	main( void )
-{
+class	Zombie {
+	public:
 
-	std::string	user_input;
-	PhoneBook	phonebook;
+		Zombie( void );
+		~Zombie( void );
 
-	do {
-		std::cout << "-> ";
-		std::getline( std::cin, user_input );
-		if ( user_input.compare( "ADD" ) == 0 )
-			phonebook.Add_New_Contact();
-		if ( user_input.compare( "SEARCH" ) == 0 )
-			phonebook.search_Contact();
-		if ( user_input.compare( "EXIT" ) == 0 )
-			break ;
-	} while ( true );
-	return ( 0 );
-}
+		void	setName( std::string name );
+		void	announce( void );
+
+	private:
+		std::string	_name;
+};
+
+Zombie* zombieHorde( int N, std::string name );
+
+#endif

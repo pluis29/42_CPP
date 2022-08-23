@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 15:59:57 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/21 23:47:07 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/22 23:06:22 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <cstdlib>
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook()
+PhoneBook::PhoneBook( void )
 {
 	this->_id = 0;
 	this->_size = 0;
@@ -23,14 +23,14 @@ PhoneBook::PhoneBook()
 	std::cout << "Opening the PhoneBook" << std::endl;
 }
 
-PhoneBook::~PhoneBook()
+PhoneBook::~PhoneBook( void )
 {
 	std::cout << "Closing the PhoneBook" << std::endl;
 }
 
-void	PhoneBook::Add_New_Contact()
+void	PhoneBook::Add_New_Contact( void )
 {
-	if (this->_id <= 7)
+	if ( this->_id <= 7 )
 		this->_id++;
 	else
 		this->_id = 1;
@@ -41,12 +41,12 @@ void	PhoneBook::Add_New_Contact()
 	this->_contact[this->_id].set_nickname();
 	this->_contact[this->_id].set_phoneNumber();
 	this->_contact[this->_id].set_darkSecret();
-	if (this->_size < 8)
+	if ( this->_size < 8 )
 		this->_size++;
 	return ;
 }
 
-void	PhoneBook::search_Contact()
+void	PhoneBook::search_Contact( void )
 {
 	std::string	user_input;
 	int			index;
@@ -55,37 +55,35 @@ void	PhoneBook::search_Contact()
 	print_AllContacts();
 	do {
 		std::cout << "Index: ";
-		std::getline(std::cin, user_input);
-		index = check_index(user_input);
-		if (index == false)
-		{
+		std::getline( std::cin, user_input );
+		index = check_index( user_input );
+		if ( index == false )
 			std::cout << "Choose a valid index" << std::endl;
-		}
 		else
 			break ;
-	} while (true);
+	} while ( true );
 	std::cout << index << std::endl;
 	this->_contact[index].print_ContactID();
 	return ;
 }
 
-int	PhoneBook::check_index(std::string user_input)
+int	PhoneBook::check_index( std::string user_input )
 {
 	int	converted;
 
-	if (user_input.length() == 1)
+	if ( user_input.length() == 1 )
 	{
-		converted = atoi(user_input.c_str());
-		if (converted >= 1 && converted <= this->_size)
-			return (converted);
+		converted = atoi( user_input.c_str() );
+		if ( converted >= 1 && converted <= this->_size )
+			return ( converted );
 	}
-	return (false);
+	return ( false );
 }
 
-void	PhoneBook::print_AllContacts()
+void	PhoneBook::print_AllContacts( void )
 {
 	this->_contact[0].print_Header();
-	for (int i = 1; i <= this->_size; i++)
+	for ( int i = 1; i <= this->_size; i++ )
 		this->_contact[i].print_Contact();
 	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 15:58:05 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/21 23:42:35 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/22 23:06:31 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 
 class	PhoneBook {
 	public:
-		PhoneBook();
-		~PhoneBook();
+		PhoneBook( void );
+		~PhoneBook( void );
 
-		void	Add_New_Contact();
-		void	print_AllContacts();
-		void	search_Contact();
-		int		check_index(std::string user_input);
+		void	Add_New_Contact( void );
+		void	print_AllContacts( void );
+		void	search_Contact( void );
+		int		check_index( std::string user_input );
 
 	private:
 		int		_id;

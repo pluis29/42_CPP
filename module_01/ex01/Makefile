@@ -5,21 +5,21 @@
 #                                                     +:+ +:+         +:+      #
 #    By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/08/20 14:32:19 by lpaulo-d          #+#    #+#              #
-#    Updated: 2022/08/22 22:13:22 by lpaulo-d         ###   ########.fr        #
+#    Created: 2022/08/21 13:55:12 by lpaulo-d          #+#    #+#              #
+#    Updated: 2022/08/22 22:42:00 by lpaulo-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 OBJDIR	=	obj/
 
-F_FILE	=	megaphone.cpp
+F_FILE	=	main.cpp Zombie.cpp zombieHorde.cpp
 OBJ		=	$(F_FILE:%.cpp=$(OBJDIR)%.o)
 
 CCP		=	g++
 RM		=	rm -rf
 P_GUARD	=	mkdir -p $(@D)
-CFLAGS	=	-Wall -Wextra -Werror -std=c++98
-NAME	=	megaphone
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -g
+NAME	=	zombieHorde
 
 all:		$(NAME)
 
