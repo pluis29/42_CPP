@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/22 11:45:47 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/22 23:14:25 by lpaulo-d         ###   ########.fr       */
+/*   Created: 2022/08/24 21:32:40 by lpaulo-d          #+#    #+#             */
+/*   Updated: 2022/08/24 21:53:39 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanB.hpp"
 
-int	main( void )
+HumanB::HumanB( std::string name ) : _name(name)
 {
-	Zombie*	horde;
+	return ;
+}
 
-	horde = zombieHorde( 15, "Spartan" );
-	for ( int i = 0; i < 15; i++ )
-		horde[i].announce();
+HumanB::~HumanB( void )
+{
+	return ;
+}
 
-	delete [] horde;
-	return ( 0 );
+void	HumanB::setWeapon( Weapon& type )
+{
+	this->_type = &type;
+	return ;
+}
+
+void	HumanB::attack( void )
+{
+	std::cout << this->_name << " attacks with their " <<
+		this->_type->getType() << std::endl;
+
+	return ;
 }
