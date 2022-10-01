@@ -6,7 +6,7 @@
 #    By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/20 14:32:19 by lpaulo-d          #+#    #+#              #
-#    Updated: 2022/08/22 22:13:22 by lpaulo-d         ###   ########.fr        #
+#    Updated: 2022/10/01 13:01:53 by lpaulo-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ OBJDIR	=	obj/
 F_FILE	=	megaphone.cpp
 OBJ		=	$(F_FILE:%.cpp=$(OBJDIR)%.o)
 
-CCP		=	g++
+CCP		=	c++
 RM		=	rm -rf
 P_GUARD	=	mkdir -p $(@D)
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
