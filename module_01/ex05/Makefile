@@ -6,20 +6,20 @@
 #    By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/21 13:55:12 by lpaulo-d          #+#    #+#              #
-#    Updated: 2022/10/03 10:33:47 by lpaulo-d         ###   ########.fr        #
+#    Updated: 2022/10/03 10:54:46 by lpaulo-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 OBJDIR	=	obj/
 
-F_FILE	=	main.cpp
+F_FILE	=	main.cpp Harl.cpp
 OBJ		=	$(F_FILE:%.cpp=$(OBJDIR)%.o)
 
 CCP		=	c++
 RM		=	rm -rf
 P_GUARD	=	mkdir -p $(@D)
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -g
-NAME	=	program
+NAME	=	harl
 
 all:		$(NAME)
 
