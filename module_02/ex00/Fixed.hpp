@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/24 20:13:47 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/10/03 16:48:27 by lpaulo-d         ###   ########.fr       */
+/*   Created: 2022/10/05 12:46:04 by lpaulo-d          #+#    #+#             */
+/*   Updated: 2022/10/05 23:29:46 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
-#include "Weapon.hpp"
+#ifndef	FIXED_HPP_
+#define	FIXED_HPP_
 
-int main()
+#include <iostream>
+
+class Fixed
 {
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
-	}
-	{
-		HumanB jim("Jim");
-		jim.attack();
-	}
-	return 0;
-}
+	public:
+		Fixed( void );
+		Fixed( Fixed const& fixed_instance );
+		Fixed& operator=( Fixed const& fixed_instance );
+		~Fixed( void );
+
+		int		getRawBits( void ) const;
+		void	setRawBits( int const raw );
+
+	private:
+		int					_raw_bits;
+		static const int	_bits;
+};
+
+
+#endif
