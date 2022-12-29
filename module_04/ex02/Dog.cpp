@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 18:46:21 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/12/27 16:31:22 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/12/29 13:48:45 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Dog::Dog( void )  {
 	return ;
 }
 
-Dog::Dog( const Dog& dog_instance ) : Animal( dog_instance ){
+Dog::Dog( const Dog& dog_instance ) : AAnimal( dog_instance ){
 	std::cout << "[Dog] copy constructor called" << std::endl;
 	this->_brain = new Brain();
 	*this = dog_instance;

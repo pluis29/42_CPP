@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 18:40:23 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/12/27 16:29:51 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/12/29 13:48:42 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Cat::Cat( void )  {
 	return ;
 }
 
-Cat::Cat( const Cat& cat_instance ) : Animal( cat_instance ){
+Cat::Cat( const Cat& cat_instance ) : AAnimal( cat_instance ){
 	std::cout << "[Cat] copy constructor called" << std::endl;
 	this->_brain = new Brain();
 	*this = cat_instance;
