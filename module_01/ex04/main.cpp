@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 20:28:33 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/10/01 12:51:33 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/11/05 18:50:46 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ void	replaceStringOutBuffer(std::string inBuffer, std::string& outBuffer,
 	while ( inBuffer.find( rem ) != inBuffer.npos )
 	{
 		x = inBuffer.find( rem );
-		outBuffer.append( inBuffer.substr( 0, x ) );
+		outBuffer.append( inBuffer.substr( 0, x ) ); 
 		outBuffer.append( rep );
 		inBuffer = inBuffer.substr( x + rem.size(), inBuffer.size() );
 	}

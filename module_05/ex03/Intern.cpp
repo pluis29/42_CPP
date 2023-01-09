@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 14:34:23 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/11/05 14:37:20 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2023/01/03 00:05:58 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Intern::~Intern() {
 }
 
 Intern &Intern::operator=( Intern const & rhs ) {
-	*this = rhs;
+	(void)rhs;
 	return ( *this );
 }
 
